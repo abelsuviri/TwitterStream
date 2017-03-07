@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'me.tatarka:gradle-retrolambda:3.5.0'
+    }
+}
+
+project.ext {
+    libraries = [
+            "androidSupport"    :   "25.2.0",
+            "butterknife"       :   "8.5.1",
+            "dagger"            :   "2.8",
+            "espresso"          :   "2.2.2",
+            "glide"             :   "3.7.0",
+            "gson"              :   "2.7",
+            "junit"             :   "4.12",
+            "retrofit"          :   "2.2.0",
+            "rxAndroid"         :   "1.2.1",
+            "rxJava"            :   "1.1.6",
+            "signpostCore"      :   "1.2.1.2",
+            "signpostOkHttp"    :   "1.1.0"
+    ]
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TwitterStream</string>
+    <string name="at_character">\@%s</string>
+</resources>

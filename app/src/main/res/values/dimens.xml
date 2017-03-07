@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listMargin">8dp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="pictureSize">36dp</dimen>
+</resources>

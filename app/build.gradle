@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.abelsuviri.twitterstream"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'CONSUMER_KEY', '\"0DadJ2vzUUcFgxgvSDraDsKAu\"'
+        buildConfigField 'String', 'CONSUMER_SECRET', '\"RkattzhfsalV7SNyVs2Oq0gv5p6dwwAsNQni8MCyBo0ozoPXks\"'
+        buildConfigField 'String', 'ACCESS_TOKEN', '\"829030417412059136-gGcVG7kalDvaF9EuCJPbEaJcEkIqSSd\"'
+        buildConfigField 'String', 'ACCESS_SECRET', '\"g1d9bxnkZGQFJ2EVHNwFsEYnxONjzGytLhmU6vfEHB9pj\"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def libs = rootProject.ext.libraries;
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${libs.espresso}", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:${libs.butterknife}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
+
+    compile "com.android.support:appcompat-v7:${libs.androidSupport}"
+    compile "com.android.support:design:${libs.androidSupport}"
+    compile "com.android.support:support-vector-drawable:${libs.androidSupport}"
+    compile "com.jakewharton:butterknife:${libs.butterknife}"
+    compile "com.google.dagger:dagger:${libs.dagger}"
+    compile "com.github.bumptech.glide:glide:${libs.glide}"
+    compile "com.google.code.gson:gson:${libs.gson}"
+    compile "io.reactivex:rxandroid:${libs.rxAndroid}"
+    compile "io.reactivex:rxjava:${libs.rxJava}"
+    compile "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    compile "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"
+    compile "oauth.signpost:signpost-core:${libs.signpostCore}"
+    compile "se.akerfeldt:okhttp-signpost:${libs.signpostOkHttp}"
+
+    testCompile "junit:junit:${libs.junit}"
+}
